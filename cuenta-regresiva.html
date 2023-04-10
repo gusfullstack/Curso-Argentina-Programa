@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CV Gustavo Ceballos</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive Resume Template">
+  <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+  <!-- FontAwesome JS-->
+  <script defer src="assets/fontawesome/js/all.min.js"></script>
+
+  <!-- Theme CSS -->
+  <link id="theme-style" rel="stylesheet" href="assets/css/pillar-1.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <article class="resume-wrapper text-center position-relative">
+    <div class="resume-wrapper-inner mx-auto text-start bg-white shadow-lg">
+      <header class="resume-header pt-4 pt-md-0">
+        <div class="row">
+          <div class="col-block col-md-auto resume-picture-holder text-center text-md-start">
+            <img class="picture" src="assets/images/gus.jpg" alt="">
+          </div>
+          <div class="col"> <!--//ENCABEZADO-->
+            <div class="row p-4 justify-content-center justify-content-md-between">
+              <div class="primary-info col-auto">
+                <h1 class="name" style="font-size: 46px; letter-spacing: -0.5px;">Gustavo J. Ceballos
+                </h1>
+
+                <div class="title mb-3">Diseñador Gráfico | Web </div>
+                <ul class="list-unstyled">
+                  <li class="mb-2"><a class="text-link" href="mailto:gustavoceballos05@gmail.com"><i
+                        class="far fa-envelope fa-fw me-2"
+                        data-fa-transform="grow-3"></i>gustavoceballos05@gmail.com</a></li>
+
+                  <li><a class="text-link" href="tel:+5492616635084"><i class="fas fa-mobile-alt fa-fw me-2"
+                        data-fa-transform="grow-6"></i>261
+                      6635084</a></li>
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </header>
+
+      <div class="resume-body p-5"> <!--//CONTACTO-->
+        <section class="resume-section summary-section ">
+          <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Gracias por contactarme!
+          </h2>
+          <div class="resume-section-content">
+            <p>En breve nos pondremos en contacto con vos!</p>
+          </div> <br>
+
+          <center style="height: 15vh; display: flex; justify-content: center; align-items: center;">
+            <section>
+              <p style="font-size: 1.5em; text-align: center; color: #F39200;">
+                <span id="days"></span> días | <span id="hours"></span> horas | <span id="minutes"></span>
+                minutos | <span id="seconds"></span> segundos
+              </p>
+            </section>
+          </center>
+
+          <br>
+
+
+          <div class="resume-section-content">
+            <p class="mb-0"><a href="index.html" style="text-decoration: none; ">VOLVER al inicio</a></p>
+          </div>
+
+      </div>
+
+    </div>
+  </article>
+
+
+  <footer class="footer text-center pt-2 pb-5">
+
+    <small class="copyright">Template descargado y modificado para Práctico Final <br> <strong> Programación Front
+        End .
+        Argentina Programa 4.0 </strong> <br> Facultad de Ingeniería - UNLPam - Argentina </small>
+  </footer>
+
+
+
+
+
+
+
+
+
+  <script>
+  const DATE_TARGET = new Date ('07/01/2023 0:00 AM');
+  // DOM for render
+  const SPAN_DAYS = document.querySelector('span#days');
+  const SPAN_HOURS = document.querySelector('span#hours');
+  const SPAN_MINUTES = document.querySelector('span#minutes');
+  const SPAN_SECONDS = document.querySelector('span#seconds');
+  // Milliseconds for the calculations
+  const MILLISECONDS_OF_A_SECOND = 1000;
+  const MILLISECONDS_OF_A_MINUTE = MILLISECONDS_OF_A_SECOND * 60;
+  const MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
+  const MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24
+  
+  function updateCountdown() {
+      // Calcs
+      const NOW = new Date()
+      const DURATION = DATE_TARGET - NOW;
+      const REMAINING_DAYS = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
+      const REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+      const REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+      const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+      // Thanks Pablo Monteserín (https://pablomonteserin.com/cuenta-regresiva/)
+  
+      // Render
+      SPAN_DAYS.textContent = REMAINING_DAYS;
+      SPAN_HOURS.textContent = REMAINING_HOURS;
+      SPAN_MINUTES.textContent = REMAINING_MINUTES;
+      SPAN_SECONDS.textContent = REMAINING_SECONDS;
+  }
+  
+  //===
+  // INIT
+  //===
+  updateCountdown();
+  // Refresh every second
+  setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
+  
+  
+  </script>
+</body>
+
+</html>
